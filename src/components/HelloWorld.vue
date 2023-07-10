@@ -20,7 +20,7 @@ export default {
     };
   },
   created() {
-    const socket = io('http://localhost:3000');
+    const socket = io(process.env.VUE_APP_SOCKET_ENDPOINT);
     socket.on('message', (message) => {
       this.messages.push(message);
     });
